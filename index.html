@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Chums Live</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-color">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="#"> <img src="img/chums/chum.png" width="10%">
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <div class="md-form my-0 chums_home">
+          <a href="https://chums.live/">Home</a>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+
+  <div class="modal fade q-result" id="modalPush" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <h2 class="pop-correct">Wrong</h2>
+          <img src="img/chums/wrong.png" class="correct-img">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade q-result" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <h2 class="pop-correct">Correct</h2>
+        <img src="img/chums/correct.png" class="correct-img">
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Card -->
+<div class="card start-quiz">
+
+  <div class="card-body">
+
+    <div class="text-center mb-3 txt-big">
+    <h4 class="card-title"><a class = "title-q">Let see what you know about ChumsLive!</a></h4>
+     <img src="img/chums/chum.png" width="15%">
+    </div>
+  
+    <div class="text-center mb-3 q-start">
+      <button type="button" class="btn bg-btn btn-block btn-rounded z-depth-1a show-quiz">Start</button>
+    </div>
+  
+
+  </div>
+
+</div>
+
+
+<!-- Card -->
+
+
+  <div class="card quiz-card">
+    <div class="view overlay">
+    </div>
+    <div class="card-body">
+      <div class="grid quiz-body">
+        <div id="quiz" class="centered grid__col--8">
+          <div class="q-question">
+            <h2 id="question" class="headline-secondary--grouped"></h2>
+          </div>
+          <div>
+
+
+
+              <div class="container">
+                  <div class="row">
+                    <div class="col col-example">
+
+                        <div id="choice0"></div>
+                        <!-- <button  class="btn btn-danger btn-rounded guess0">A</button> -->
+                    </div>
+                    <div class="col col-example">
+                        <div id="choice1"></div>
+                        <!-- <button  class="btn btn-danger btn-rounded guess1">B</button> -->
+
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col col-example">
+
+                        <div id="choice2"></div>
+                        <!-- <button  class="btn btn-danger btn-rounded guess2">C</button> -->
+                    </div>
+                    <div class="col col-example">
+
+                        <div id="choice3"></div>
+                        <!-- <button  class="btn btn-danger btn-rounded guess3">D</button> -->
+                    </div>
+                  </div>
+                </div>
+            <!-- <div class="container">
+              <div class="row">
+                <div class="col col-example">
+                  <div id="choice0"></div>
+                  <button  class="btn btn-danger btn-rounded guess0">A</button>
+                </div>
+                <div class="col col-example">
+                    <div id="choice1"></div>
+                  <button  class="btn btn-danger btn-rounded guess1">B</button>
+                </div>
+                <div class="col col-example">
+                    <div id="choice2"></div>
+                  <button  class="btn btn-danger btn-rounded guess3">C</button>
+                </div>
+                <div class="col col-example">
+                    <div id="choice3"></div>
+                  <button  class="btn btn-danger btn-rounded guess4">D</button>
+                </div>
+                
+              </div>
+            </div> -->
+          </div>
+          <div id="pop">
+          </div>
+          <footer>
+
+            <button type="button" class="btn btn-primary q-count">
+              Question <span class="badge badge-danger ml-2" id="progress"></span>
+            </button>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!-- Start your project here-->
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>
