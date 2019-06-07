@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Random Questions</title>
+</head>
+<body>
+    <style>
+        #frame001 {
+            background-color: white;
+            border: 2px solid black;
+            width: 500px;
+            height: 400px;
+        }
+
+        .blue001 {
+            background-color: dodgerblue;
+            border: none;
+            color: white;
+            padding: 7px 17px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 6px 2px;
+            border-radius: 9px;
+            cursor: pointer;
+            width: 120px;
+        }
+
+        .blue002 {
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 7px 17px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            border-radius: 9px;
+            cursor: pointer;
+            width: 120px;
+        }
+
+        #center001 {
+            text-align: center;
+        }
+
+        #font001 {
+            font-size: large;
+            color: black;
+        }
+    </style>
+    <div id="frame001">
+        <div id="font001">
+            <div id="center001">
+                <h2>Random Questions</h2>
+                Question: <text id="question001">0</text><br />
+                Score: <text id="score001">0</text>
+                <hr />
+                <div id="disappear001">
+                    <p>Click Begin to start the quiz.</p>
+                    <button class="blue002" onclick="begin001()">Begin</button>
+                </div>
+                <p id="message001"></p>
+                <p id="message002"></p>
+                <p id="message003"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var shuffle001 = Math.floor(Math.random() * 10);
+        var a = ["What is 1 + 1?<br /><br /><button class=blue001 onclick=q002()>1</button><br /><button class=blue001 onclick=q001()>2</button><br /><button class=blue001 onclick=q002()>3</button><br />",
+                 "What is 2 + 2?<br /><br /><button class=blue001 onclick=q001()>4</button><br /><button class=blue001 onclick=q002()>5</button><br /><button class=blue001 onclick=q002()>7</button><br />",
+                 "What is 3 + 3?<br /><br /><button class=blue001 onclick=q002()>8</button><br /><button class=blue001 onclick=q002()>3</button><br /><button class=blue001 onclick=q001()>6</button><br />"];
+
+        var b = ["What is 4 + 4?<br /><br /><button class=blue001 onclick=q003()>8</button><br /><button class=blue001 onclick=q004()>12</button><br /><button class=blue001 onclick=q004()>13</button><br />",
+                 "What is 5 + 5?<br /><br /><button class=blue001 onclick=q004()>11</button><br /><button class=blue001 onclick=q003()>10</button><br /><button class=blue001 onclick=q004()>15</button><br />",
+                 "What is 6 + 6?<br /><br /><button class=blue001 onclick=q004()>11</button><br /><button class=blue001 onclick=q003()>12</button><br /><button class=blue001 onclick=q004()>15</button><br />"];
+
+        // var c = ["What is 7 + 7?<br /><br /><button class=blue001 onclick=q005()>14</button><br /><button class=blue001 onclick=q006()>10</button><br /><button class=blue001 onclick=q006()>15</button><br />",
+        //          "What is 8 + 8?<br /><br /><button class=blue001 onclick=q006()>11</button><br /><button class=blue001 onclick=q006()>10</button><br /><button class=blue001 onclick=q005()>16</button><br />",
+        //          "What is 9 + 9?<br /><br /><button class=blue001 onclick=q005()>18</button><br /><button class=blue001 onclick=q006()>10</button><br /><button class=blue001 onclick=q006()>15</button><br />"];
+
+        // var h = ["What is 10 + 10?<br /><br /><button class=blue001 onclick=q007()>20</button><br /><button class=blue001 onclick=q008()>12</button><br /><button class=blue001 onclick=q008()>15</button><br />",
+        //          "What is 11 + 11?<br /><br /><button class=blue001 onclick=q007()>22</button><br /><button class=blue001 onclick=q008()>10</button><br /><button class=blue001 onclick=q008()>16</button><br />",
+        //          "What is 12 + 12?<br /><br /><button class=blue001 onclick=q007()>24</button><br /><button class=blue001 onclick=q008()>10</button><br /><button class=blue001 onclick=q008()>15</button><br />"];
+
+        // var i = ["What is 13 + 13?<br /><br /><button class=blue001 onclick=q010()>1</button><br /><button class=blue001 onclick=q009()>26</button><br /><button class=blue001 onclick=q010()>3</button><br />",
+        //          "What is 14 + 14?<br /><br /><button class=blue001 onclick=q009()>28</button><br /><button class=blue001 onclick=q010()>5</button><br /><button class=blue001 onclick=q010()>7</button><br />",
+        //          "What is 15 + 15?<br /><br /><button class=blue001 onclick=q010()>8</button><br /><button class=blue001 onclick=q010()>3</button><br /><button class=blue001 onclick=q009()>30</button><br />"];
+
+        // var j = ["What is 16 + 16?<br /><br /><button class=blue001 onclick=q011()>32</button><br /><button class=blue001 onclick=q012()>12</button><br /><button class=blue001 onclick=q012()>13</button><br />",
+        //          "What is 17 + 17?<br /><br /><button class=blue001 onclick=q012()>11</button><br /><button class=blue001 onclick=q011()>34</button><br /><button class=blue001 onclick=q012()>15</button><br />",
+        //          "What is 18 + 18?<br /><br /><button class=blue001 onclick=q012()>11</button><br /><button class=blue001 onclick=q012()>12</button><br /><button class=blue001 onclick=q011()>36</button><br />"];
+
+        // var k = ["What is 19 + 19?<br /><br /><button class=blue001 onclick=q013()>38</button><br /><button class=blue001 onclick=q014()>10</button><br /><button class=blue001 onclick=q014()>15</button><br />",
+        //          "What is 20 + 20?<br /><br /><button class=blue001 onclick=q014()>11</button><br /><button class=blue001 onclick=q013()>40</button><br /><button class=blue001 onclick=q014()>16</button><br />",
+        //          "What is 21 + 21?<br /><br /><button class=blue001 onclick=q014()>18</button><br /><button class=blue001 onclick=q014()>10</button><br /><button class=blue001 onclick=q013()>42</button><br />"];
+
+        // var l = ["What is 22 + 22?<br /><br /><button class=blue001 onclick=q015()>44</button><br /><button class=blue001 onclick=q016()>12</button><br /><button class=blue001 onclick=q016()>15</button><br />",
+        //          "What is 23 + 23?<br /><br /><button class=blue001 onclick=q016()>22</button><br /><button class=blue001 onclick=q015()>46</button><br /><button class=blue001 onclick=q016()>16</button><br />",
+        //          "What is 24 + 24?<br /><br /><button class=blue001 onclick=q016()>24</button><br /><button class=blue001 onclick=q016()>10</button><br /><button class=blue001 onclick=q015()>48</button><br />"];
+
+        // var m = ["What is 25 + 25?<br /><br /><button class=blue001 onclick=q017()>50</button><br /><button class=blue001 onclick=q018()>10</button><br /><button class=blue001 onclick=q018()>15</button><br />",
+        //          "What is 26 + 26?<br /><br /><button class=blue001 onclick=q018()>11</button><br /><button class=blue001 onclick=q017()>52</button><br /><button class=blue001 onclick=q018()>16</button><br />",
+        //          "What is 27 + 27?<br /><br /><button class=blue001 onclick=q018()>18</button><br /><button class=blue001 onclick=q018()>10</button><br /><button class=blue001 onclick=q017()>54</button><br />"];
+
+        var n = ["What is 28 + 28?<br /><br /><button class=blue001 onclick=q019()>56</button><br /><button class=blue001 onclick=q020()>12</button><br /><button class=blue001 onclick=q020()>15</button><br />",
+                 "What is 29 + 29?<br /><br /><button class=blue001 onclick=q020()>22</button><br /><button class=blue001 onclick=q019()>58</button><br /><button class=blue001 onclick=q020()>16</button><br />",
+                 "What is 30 + 30?<br /><br /><button class=blue001 onclick=q020()>24</button><br /><button class=blue001 onclick=q020()>10</button><br /><button class=blue001 onclick=q019()>60</button><br />"];
+
+        var random001 = Math.floor(Math.random() * a.length);
+        var random002 = Math.floor(Math.random() * b.length);
+        // var random003 = Math.floor(Math.random() * c.length);
+        // var random004 = Math.floor(Math.random() * h.length);
+        // var random005 = Math.floor(Math.random() * i.length);
+        // var random006 = Math.floor(Math.random() * j.length);
+        // var random007 = Math.floor(Math.random() * k.length);
+        // var random008 = Math.floor(Math.random() * l.length);
+        // var random009 = Math.floor(Math.random() * m.length);
+        var random010 = Math.floor(Math.random() * n.length);
+
+        var d = ["Correct"];
+        var e = ["Incorrect"];
+
+        var f = 0;
+        f++;
+        var g = 0;
+        g++;
+
+        function begin001() {
+            question001.innerHTML = f++;
+            disappear001.innerHTML = "";
+            if (shuffle001 == "0") {
+                message001.innerHTML = a[random001];
+
+            } else if (shuffle001 == "1") {
+                message001.innerHTML = b[random002];
+
+            } 
+            // else if (shuffle001 == "2") {
+            //     message001.innerHTML = c[random003];
+
+            // } 
+            
+            // else if (shuffle001 == "3") {
+            //     message001.innerHTML = h[random004];
+
+            // } 
+            
+            // else if (shuffle001 == "4") {
+            //     message001.innerHTML = i[random005];
+
+            // } else if (shuffle001 == "5") {
+            //     message001.innerHTML = j[random006];
+
+            // } 
+            // else if (shuffle001 == "6") {
+            //     message001.innerHTML = k[random007];
+
+            // } 
+            // else if (shuffle001 == "7") {
+            //     message001.innerHTML = l[random008];
+
+            // } 
+            // else if (shuffle001 == "8") {
+            //     message001.innerHTML = m[random009];
+
+            // }
+            else {
+                message001.innerHTML = n[random010];
+            }
+        }
+
+        function q001() {
+            score001.innerHTML = g++;
+            message001.innerHTML = "";
+            message002.innerHTML = d;
+            message003.innerHTML = "<button class=blue002 onclick=next001()>Next</button>";
+        }
+
+        function q002() {
+            message001.innerHTML = "";
+            message002.innerHTML = e;
+            message003.innerHTML = "<button class=blue002 onclick=next001()>Next</button>";
+        }
+
+        function next001() {
+            random002 = Math.floor(Math.random() * b.length);
+            if (f > 10) {
+                message001.innerHTML = "End of Quiz.";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+            } else {
+                message001.innerHTML = b[random002];
+                question001.innerHTML = f++;
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+            }
+        }
+
+        function q003() {
+            score001.innerHTML = g++;
+            message001.innerHTML = "";
+            message002.innerHTML = d;
+            message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        }
+
+        function q004() {
+            message001.innerHTML = "";
+            message002.innerHTML = e;
+            message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        }
+
+        // function next002() {
+        //     random003 = Math.floor(Math.random() * c.length);
+        //     if (f > 10) {
+        //         message001.innerHTML = "End of Quiz.";
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     } else {
+        //         message001.innerHTML = c[random003];
+        //         question001.innerHTML = f++;
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     }
+        // }
+
+        // function q005() {
+        //     score001.innerHTML = g++;
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = d;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function q006() {
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = e;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function next003() {
+        //     random004 = Math.floor(Math.random() * h.length);
+        //     if (f > 10) {
+        //         message001.innerHTML = "End of Quiz.";
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     } else {
+        //         message001.innerHTML = h[random004];
+        //         question001.innerHTML = f++;
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     }
+        // }
+
+        // function q007() {
+        //     score001.innerHTML = g++;
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = d;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function q008() {
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = e;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function next004() {
+        //     random005 = Math.floor(Math.random() * i.length);
+        //     if (f > 10) {
+        //         message001.innerHTML = "End of Quiz.";
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     } else {
+        //         message001.innerHTML = i[random005];
+        //         question001.innerHTML = f++;
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     }
+        // }
+
+        // function q009() {
+        //     score001.innerHTML = g++;
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = d;
+        //     message003.innerHTML = "<button class=blue002 onclick=next005()>Next</button>";
+        // }
+
+        // function q010() {
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = e;
+        //     message003.innerHTML = "<button class=blue002 onclick=next005()>Next</button>";
+        // }
+
+        // function next005() {
+        //     random006 = Math.floor(Math.random() * j.length);
+        //     if (f > 10) {
+        //         message001.innerHTML = "End of Quiz.";
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     } else {
+        //         message001.innerHTML = j[random006];
+        //         question001.innerHTML = f++;
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     }
+        // }
+
+        // function q011() {
+        //     score001.innerHTML = g++;
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = d;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function q012() {
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = e;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function next006() {
+        //     random007 = Math.floor(Math.random() * k.length);
+        //     if (f > 10) {
+        //         message001.innerHTML = "End of Quiz.";
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     } else {
+        //         message001.innerHTML = k[random007];
+        //         question001.innerHTML = f++;
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     }
+        // }
+
+        // function q013() {
+        //     score001.innerHTML = g++;
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = d;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function q014() {
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = e;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function next007() {
+        //     random008 = Math.floor(Math.random() * l.length);
+        //     if (f > 10) {
+        //         message001.innerHTML = "End of Quiz.";
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     } else {
+        //         message001.innerHTML = l[random008];
+        //         question001.innerHTML = f++;
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     }
+        // }
+
+        // function q015() {
+        //     score001.innerHTML = g++;
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = d;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function q016() {
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = e;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function next008() {
+        //     random009 = Math.floor(Math.random() * m.length);
+        //     if (f > 10) {
+        //         message001.innerHTML = "End of Quiz.";
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     } else {
+        //         message001.innerHTML = m[random009];
+        //         question001.innerHTML = f++;
+        //         message002.innerHTML = "";
+        //         message003.innerHTML = "";
+        //     }
+        // }
+
+        // function q017() {
+        //     score001.innerHTML = g++;
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = d;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        // function q018() {
+        //     message001.innerHTML = "";
+        //     message002.innerHTML = e;
+        //     message003.innerHTML = "<button class=blue002 onclick=next009()>Next</button>";
+        // }
+
+        function next009() {
+            random010 = Math.floor(Math.random() * n.length);
+            if (f > 10) {
+                message001.innerHTML = "End of Quiz.";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+            } else {
+                message001.innerHTML = n[random010];
+                question001.innerHTML = f++;
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+            }
+        }
+
+        function q019() {
+            score001.innerHTML = g++;
+            message001.innerHTML = "";
+            message002.innerHTML = d;
+            message003.innerHTML = "<button class=blue002 onclick=next010()>Next</button>";
+        }
+
+        function q020() {
+            message001.innerHTML = "";
+            message002.innerHTML = e;
+            message003.innerHTML = "<button class=blue002 onclick=next010()>Next</button>";
+        }
+
+        function next010() {
+            if (f > 10) {
+                message001.innerHTML = "End of Quiz.";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+            } else {
+                message001.innerHTML = a[random001];
+                question001.innerHTML = f++;
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
