@@ -1,4 +1,4 @@
-function Question(question, answer1, answer2, answer3, answer4, rightAnswerIndex,  ) {
+function Question(question, answer1, answer2, answer3, answer4, rightAnswerIndex) {
 
   this.question = question;
   this.answer1 = answer1;
@@ -6,6 +6,8 @@ function Question(question, answer1, answer2, answer3, answer4, rightAnswerIndex
   this.answer3 = answer3;
   this.answer4 = answer4;
   this.rightAnswerindex = rightAnswerIndex;
+
+
 
 }
 
@@ -39,24 +41,41 @@ Quiz.prototype.answer = function (buttonIndex) {
   
   }
 
+
+  if(this.questionsIndex >=1 ){
+    console.log('ok');
+    $(".checkbox").show();
+  
+  }
+  
+
   if(this.questionsIndex >=2 ){
     console.log('ok');
     $(".checkbox").hide();
   
   }
 
-// $("input[type='checkbox'].abc").change(function(){
-//   var a = $("input[type='checkbox'].abc");
-//   if(a.length == a.filter(":checked").length){
-    
-//   }
-// });
+  var ckbox = $('#checkbox1');
+  $('input').on('click',function () {
+    if (ckbox.is(':checked')) {
+       
+      console.log('ok');
+      $(".checkbox").hide();
+     
+ } 
+
+
+})
+
+$("input[type='checkbox'].abc").change(function(){
+  var a = $("input[type='checkbox'].abc");
+  if(a.length == a.filter(":checked").length){
+    alert('all checked');
+    quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element,choice2Element, choice3Element, progressElement);
+    this.score++;
+  }
+});
   
-  // if (this.questions > 3) {
-
-
-  //   $("#choice3").hide();
-  // }
  
 
   if (buttonIndex === this.questions[this.questionsIndex].rightAnswerindex) {
@@ -65,6 +84,7 @@ Quiz.prototype.answer = function (buttonIndex) {
 
     this.score++;
   }
+
 
   if (buttonIndex != this.questions[this.questionsIndex].rightAnswerindex) {
     console.log('wrong');
@@ -132,10 +152,10 @@ var question2 = new Question(" <a class = 'chums_question'>Where do we go to joi
  "<img src='img/chums/q2/d.png'  class = 'choice-img' /><button  class='btn btn-danger btn-rounded guess3 '>D</button>", 3);
 
  var question3 = new Question(" <a class = 'chums_question'>Select 3 possible ways to top up.",
- "<img src='img/chums/q3/a.png'  class = 'choice-img' /> <button  class='btn btn-danger btn-rounded guess0' id ='checkone'>A</button> ", 
-  "<img src='img/chums/q3/b.png'   class = 'choice-img'/><button  class='btn btn-danger btn-rounded guess1'>B</button> ",
-  "<img src='img/chums/q3/c.png'   class = 'choice-img'/><button  class='btn btn-danger btn-rounded guess2'>C</button>",
-  "<img src='img/chums/q3/d.png'  class = 'choice-img' /><button  class='btn btn-danger btn-rounded guess3 '>D</button>", 3);
+ "<img src='img/chums/q3/a.png'  class = 'choice-img' /> ", 
+  "<img src='img/chums/q3/b.png'   class = 'choice-img'/>",
+  "<img src='img/chums/q3/c.png'   class = 'choice-img'/>",
+  "<img src='img/chums/q3/d.png'  class = 'choice-img' />", 3,);
 
    var question4 = new Question(" <a class = 'chums_question'>Where do we go to check the hours and gems earned?</a>",
    "<img src='img/chums/q4/a.png'  class = 'choice-img' /><button  class='btn btn-danger btn-rounded guess0 '>A</button> ", 
@@ -168,6 +188,8 @@ quiz.add(question4);
 quiz.add(question5);
 
 quiz.add(question6);
+
+
 
 
 var quizElement = document.getElementById("quiz");
@@ -225,54 +247,97 @@ $("#choice2").click(function () {
 $("#choice3").click(function () {
   quiz.answer(3);
   quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element, choice2Element, choice3Element, progressElement);
+
 });
 
 
 $(document).ready(function () {
-  var ckbox = $('#checkbox1');
-  var box2 = $('#checkbox2');
-  var box3 = $('#checkbox3');
-  var box4 = $('#checkbox4');
+  var ckbox = $('#defaultInline1');
+  var box2 = $('#defaultInline2');
+  var box3 = $('#defaultInline3');
+  var box4 = $('#defaultUnchecked');
+
+
+
+  $("input[type='checkbox'].abc").change(function(){
+    var a = $("input[type='checkbox'].abc");
+    if(a.length == a.filter(":checked").length){
+      quiz.answer(3);
+      quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element,choice2Element, choice3Element, progressElement);
+  
+    }
+  });
 
   $('input').on('click',function () {
       if (ckbox.is(':checked')) {
          
         console.log('ok');
-
+        $(".checkbox").hide();
         quiz.answer(0);
-quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element, choice2Element, choice3Element, progressElement);
-      } 
+        quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element,choice2Element, choice3Element, progressElement);
+  
+   } 
+
+   if (ckbox.is(':checked') && box2.is(':checked'))  {
+         
+    // $("#modalCart").modal(hide)
+    // $("#modalPushs").modal(hide)
+    alert('selected wrong ');
+    // quiz.answer(0);
+    // quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element,choice2Element, choice3Element, progressElement);
+
+} 
 
 
 
       if (box2.is(':checked')) {
          
-        console.log('ok');
+        console.log('select two more');
 
-        quiz.answer(1);
-quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element, choice2Element, choice3Element, progressElement);
-      } 
+        // quiz.answer(1);
+        $(".checkbox").show();
+        $("#modalCart").modal()
+        $("#modalPush").modal('hide')
+
+
+
+  } 
 
 
       if (box3.is(':checked')) {
          
-        console.log('ok');
+        console.log('select one more');
 
-        quiz.answer(2);
-quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element, choice2Element, choice3Element, progressElement);
-      } 
+        // quiz.answer(2);
+        $(".checkbox").show();
+        $("#modalCart").modal()
+
+
+
+     } 
 
 
       if (box4.is(':checked')) {
          
-        console.log('ok');
+        console.log('selected');
 
-        quiz.answer(3);
-quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element, choice2Element, choice3Element, progressElement);
-      } 
+        // quiz.answer(2);
+        $(".checkbox").show();
+        $("#modalCart").modal()
+     } 
 
   });
 });
+
+// $("input[type='checkbox'].abc").change(function(){
+//   var a = $("input[type='checkbox'].abc");
+//   if(a.length == a.filter(":checked").length){
+//       alert('all checked');
+//       quiz.answer(3);
+//       quiz.renderInElement(quizElement, headingElement, questionElement, choice0Element, choice1Element, choice2Element, choice3Element, progressElement);
+
+//   }
+// });
 
 
 $(".quiz-card").hide();
@@ -285,6 +350,7 @@ $(document).ready(function(){
     $(".start-quiz").hide();
   });
 
+ 
  
 
 });
