@@ -1,129 +1,49 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Chums Live</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <script
-    src="https://code.jquery.com/jquery-2.1.3.js"
-    integrity="sha256-goy7ystDD5xbXSf+kwL4eV6zOPJCEBD1FBiCElIm+U8="
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Chums Live</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-2.1.3.js" integrity="sha256-goy7ystDD5xbXSf+kwL4eV6zOPJCEBD1FBiCElIm+U8="
     crossorigin="anonymous"></script>
-  
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js"></script>
-  
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  </head>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
 <body>
 
 
-    <style>
-        
-    .q-question #message001{
-        margin-left: auto;
-    margin-right: auto;
+  <style>
+    .q-question #message001 {
+      margin-left: auto;
+      margin-right: auto;
 
 
     }
+  </style>
 
+  <!-- Card -->
 
-    article
-{
-  margin-top: 3em;
-  text-align: center;
-}
-#all
-{
-  
-}
-#defaultInline1
-{
-  background-color: rgba(0, 0, 0, 0.5);
-  bottom: 0;
-  display: none;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: all 1s;
-  z-index: 9999;
-}
-#defaultInline1 p
-{
-  background-color: #333;
-  color: #ccc;
-  height: 200px;
-  margin: 2em auto;
-  width: 200px;
-}
-        </style>
-    <!-- <style>
-        #frame001 {
-            background-color: white;
-            border: 2px solid black;
-            width: 500px;
-            height: 400px;
-        }
-
-        .blue001 {
-            background-color: dodgerblue;
-            border: none;
-            color: white;
-            padding: 7px 17px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 6px 2px;
-            border-radius: 9px;
-            cursor: pointer;
-            width: 120px;
-        }
-
-        .blue002 {
-            background-color: blue;
-            border: none;
-            color: white;
-            padding: 7px 17px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 2px 2px;
-            border-radius: 9px;
-            cursor: pointer;
-            width: 120px;
-        }
-
-        #center001 {
-            text-align: center;
-        }
-
-        #font001 {
-            font-size: large;
-            color: black;
-        }
-    </style> -->
-
-<!-- Card -->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-color">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-color">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
       aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <!-- <span class="navbar-toggler-icon"></span> -->
     </button>
     <div class="collapse navbar-collapse" id="basicExampleNav">
       <ul class="navbar-nav mr-auto">
@@ -140,38 +60,29 @@
     </div>
   </nav>
 
-  <div id="all">
-      <article>
-        <a href="#defaultInline1">Click Me</a>
-      </article>
-    
-      <div id="defaultInline1">
-        <p>
-          That's a pop up!
-        </p>
-      </div>
-    </div>
-<div class="card start-quiz">
 
-    <div class="card-body">
-  
-      <div class="text-center mb-3 txt-big">
-      <h4 class="card-title"><a class = "title-q">Let see what you know about ChumsLive!</a></h4>
-       <img src="img/chums/chum.png" width="15%">
-      </div>
-    
-      <div class="text-center mb-3 q-start">
-        <button type="button" class="btn bg-btn btn-block btn-rounded z-depth-1a show-quiz blue002" onclick="begin001()">Start</button>
-      </div>
-    
-  
-    </div>
-  
   </div>
 
 
-  
-  
+  <div class="card start-quiz">
+
+    <div class="card-body">
+
+      <div class="text-center mb-3 txt-big">
+        <h4 class="card-title"><a class="title-q">Let see what you know about ChumsLive!</a></h4>
+        <img src="img/chums/chum.png" width="15%">
+      </div>
+
+      <div class="text-center mb-3 q-start">
+        <button type="button" class="btn bg-btn btn-block btn-rounded z-depth-1a show-quiz blue002"
+          onclick="begin001()">Start</button>
+      </div>
+
+    </div>
+  </div>
+
+
+
   <div class="card quiz-card">
     <div class="view overlay">
     </div>
@@ -182,26 +93,24 @@
             <h2 id="message001" class="headline-secondary--grouped"></h2>
           </div> -->
           <div id="question">
-              <h1>Quiz Over</h1>
-          <h2  class="headline-secondary--grouped"> Your Score is: <text id="score001">0</text>
-          out of <text id="question001">0</text><br /></h2>
-          <div class="text-center mb-3 q-start" ><button class="btn bg-btn retry_btn btn-block btn-rounded z-depth-1a" value="Refresh Page" onClick="history.go(0)">Retry Quiz</button></div>
-         </div>
+            <h1>Quiz Over</h1>
+            <h2 class="headline-secondary--grouped"> Your Score is: <text id="score001">0</text>
+              out of <text id="question001">0</text><br /></h2>
+            <div class="text-center mb-3 q-start"><button class="btn bg-btn retry_btn btn-block btn-rounded z-depth-1a"
+                value="Refresh Page" onClick="history.go(0)">Retry Quiz</button></div>
+          </div>
           <hr />
 
           <div class="container">
             <div class="row" id="disappear001">
-                
 
 
-              </div>
+
             </div>
-         
-<!-- <div id="message001" >
+          </div>
 
-
-</div> -->
-          <p id="message001" ></p>
+      
+          <p id="message001"></p>
           <!-- <p id="message001"></p> -->
           <p id="message002"></p>
           <p id="message003"></p>
@@ -209,41 +118,13 @@
           <p id="checkBTN"></p>
           <p id="checkMes02"></p>
           <p id="checkMes03"></p>
-          
+
           <div>
 
-
-
-            <!-- <div class="container">
-              <div class="row">
-                <div class="col col-example">
-                  <div id="choice0"></div>
-                  <button  class="btn btn-danger btn-rounded guess0">A</button>
-                </div>
-                <div class="col col-example">
-                    <div id="choice1"></div>
-                  <button  class="btn btn-danger btn-rounded guess1">B</button>
-                </div>
-                <div class="col col-example">
-                    <div id="choice2"></div>
-                  <button  class="btn btn-danger btn-rounded guess3">C</button>
-                </div>
-                <div class="col col-example">
-                    <div id="choice3"></div>
-                  <button  class="btn btn-danger btn-rounded guess4">D</button>
-                </div>
-                
-              </div>
-            </div> -->
           </div>
           <div id="pop">
           </div>
-          <!-- <footer>
-
-            <button type="button" class="btn btn-primary q-count">
-              Question <span class="badge badge-danger ml-2" id="progress"></span>
-            </button>
-          </footer> -->
+        
         </div>
       </div>
     </div>
@@ -252,416 +133,320 @@
 
 
 
-  
-    <script>
-        
 
-        function unCheck(){
-  document.getElementById("defaultInline1").checked = false;
-}
+  <script>
 
 
-
-        var shuffle001 = Math.floor(Math.random() * 6);
-        var a = ["<h2  class='headline-secondary--grouped'>What is a perfect example of a broadcast picture? </h2>  <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'><img src='img/chums/q1/a.png'  class = 'choice-img'  /><button class='blue001 btn btn-danger btn-rounded guess1  waves-effect waves-light' onclick=q001()>A</button></div><div class='col col-example'> <img src='img/chums/q1/b.png'  class = 'choice-img'  /><button class='blue001 btn btn-danger btn-rounded guess1  waves-effect waves-light' onclick=q002()> B </button></div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q1/c.png'  class = 'choice-img'  /><button class='blue001 btn btn-danger btn-rounded guess1  waves-effect waves-light' onclick=q002()> C </button> </div><div class='col col-example'><img src='img/chums/q1/d.png'  class = 'choice-img'  /> <button class='blue001 btn btn-danger btn-rounded guess1  waves-effect waves-light' onclick=q002()>D</button> </div></div> </div>",
-                 ];
-
-        var b = ["<h2  class='headline-secondary--grouped'>Where do we go to join a clan?</h2> <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q2/a.png'  class = 'choice-img' /> <button class=' blue001 btn btn-danger btn-rounded guess0' onclick=q004()> A </button> </div>  <div class='col col-example'> <img src='img/chums/q2/b.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q004()> B </button> </div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q2/c.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q004()> C </button> </div> <div class='col col-example'> <img src='img/chums/q2/d.png'  class = 'choice-img' /> <button  class='blue001 btn btn-danger btn-rounded guess0' onclick=q003()> D </button> </div>",
-                ];
-
-        var c = ["<h2  class='headline-secondary--grouped'>Select 3 possible ways to top up.</h2> <div class'container'> <div class='row'>  <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q3/a.png'  class = 'choice-img' />  <input type='checkbox' class='blue001  guess0 abc' onclick=q005() ><p> A</p>  </div>  <div class='col col-example'> <img src='img/chums/q3/b.png'  class = 'choice-img' />    <input type='checkbox' class='blue001  guess0' onclick=q006() id ='defaultInline1'> <p> B</p>  </div>  <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q3/a.png'  class = 'choice-img' />  <input type='checkbox' class='blue001 guess0 abc' onclick=q005()> <p> C</p> </div>  <div class='col col-example'> <img src='img/chums/q3/b.png'  class = 'choice-img' />    <input type='checkbox' class='blue001 guess0 abc' onclick=q005()> <p> D</p>  </div> </div> </div>"];
-
-        var h = ["<h2  class='headline-secondary--grouped'>Where do we go to check the hours and gems earned? </h2> <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q4/a.png'  class = 'choice-img' /> <button class=' blue001 btn btn-danger btn-rounded guess0' onclick=q007()> A </button> </div>  <div class='col col-example'> <img src='img/chums/q4/b.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q008()> B </button> </div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q4/c.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q008()> C </button> </div> <div class='col col-example'> <img src='img/chums/q4/d.png'  class = 'choice-img' /> <button  class='blue001 btn btn-danger btn-rounded guess0' onclick=q008()> D </button> </div>"];
-
-        var i = ["<h2  class='headline-secondary--grouped'>How to check the Ranking </h2> <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q5/a.png'  class = 'choice-img' /> <button class=' blue001 btn btn-danger btn-rounded guess0' onclick=q009()> A </button> </div>  <div class='col col-example'> <img src='img/chums/q5/b.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q010()> B </button> </div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q5/c.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q010()> C </button> </div> <div class='col col-example'> <img src='img/chums/q5/d.png'  class = 'choice-img' /> <button  class='blue001 btn btn-danger btn-rounded guess0' onclick=q010()> D </button> </div>"];
-
-        var j = ["<h2  class='headline-secondary--grouped'> Which is a perfect example of a standard live broadcast? </h2> <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q6/a.png'  class = 'choice-img' /> <button class=' blue001 btn btn-danger btn-rounded guess0' onclick=q011()> A </button> </div>  <div class='col col-example'> <img src='img/chums/q6/b.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q012()> B </button> </div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q6/c.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q012()> C </button> </div> <div class='col col-example'> <img src='img/chums/q6/d.png'  class = 'choice-img' /> <button  class='blue001 btn btn-danger btn-rounded guess0' onclick=q0012()> D </button> </div>"];
+    function unCheck() {
+      document.getElementById("defaultInline1").checked = false;
+    }
 
 
-        var random001 = Math.floor(Math.random() * a.length);
-        var random002 = Math.floor(Math.random() * b.length);
-        var random003 = Math.floor(Math.random() * c.length);
-        var random004 = Math.floor(Math.random() * h.length);
-        var random005 = Math.floor(Math.random() * i.length);
-        var random006 = Math.floor(Math.random() * j.length);
-       
+    var shuffle001 = Math.floor(Math.random() * 6);
+    var a = ["<h2  class='headline-secondary--grouped'>What is a perfect example of a broadcast picture? </h2>  <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'><img src='img/chums/q1/a.png'  class = 'choice-img'  /><button class='blue001 btn btn-danger btn-rounded guess1  waves-effect waves-light' onclick='onclick=q001()'>A</button></div><div class='col col-example'> <img src='img/chums/q1/b.png'  class = 'choice-img'  /><button class='blue001 btn btn-danger btn-rounded guess1  waves-effect waves-light' onclick=q002()> B </button></div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q1/c.png'  class = 'choice-img'  /><button class='blue001 btn btn-danger btn-rounded guess1  waves-effect waves-light' onclick=q002()> C </button> </div><div class='col col-example'><img src='img/chums/q1/d.png'  class = 'choice-img'  /> <button class='blue001 btn btn-danger btn-rounded guess1  waves-effect waves-light' onclick=q002()>D</button> </div></div> </div>",
+    ];
 
-        var d = [" <h2 class='pop-correct'>Correct</h2><img src='img/chums/correct.png' class='correct-img'>"];
-        var e = ["<h2 class='pop-correct'>Wrong</h2><img src='img/chums/wrong.png' class='correct-img'>"];
+    var b = ["<h2  class='headline-secondary--grouped'>Where do we go to join a clan?</h2> <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q2/a.png'  class = 'choice-img' /> <button class=' blue001 btn btn-danger btn-rounded guess0' onclick=q004()> A </button> </div>  <div class='col col-example'> <img src='img/chums/q2/b.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q004()> B </button> </div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q2/c.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q004()> C </button> </div> <div class='col col-example'> <img src='img/chums/q2/d.png'  class = 'choice-img' /> <button  class='blue001 btn btn-danger btn-rounded guess0' onclick=q003()> D </button> </div>",
+    ];
 
-        var f = 0;
-        f++;
-        var g = 0;
-        g++;
+    var c = ["<h2  class='headline-secondary--grouped'>Select 3 possible ways to top up.</h2> <div class'container'> <div class='row'>  <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q3/a.png'  class = 'choice-img' />  <input type='checkbox' class='blue001  guess0 abc' onclick=q005() ><p> A</p>  </div>  <div class='col col-example'> <img src='img/chums/q3/b.png'  class = 'choice-img' />    <input type='checkbox' class='blue001  guess0' onclick=q006() id ='defaultInline1'> <p> B</p>  </div>  <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q3/a.png'  class = 'choice-img' />  <input type='checkbox' class='blue001 guess0 abc' onclick=q015()> <p> C</p> </div>  <div class='col col-example'> <img src='img/chums/q3/b.png'  class = 'choice-img' />    <input type='checkbox' class='blue001 guess0 abc' onclick=q025()> <p> D</p>  </div> </div> </div>"];
 
-        $("#closeBtn").click(function () {
+    var h = ["<h2  class='headline-secondary--grouped'>Where do we go to check the hours and gems earned? </h2> <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q4/a.png'  class = 'choice-img' /> <button class=' blue001 btn btn-danger btn-rounded guess0' onclick=q008()> A </button> </div>  <div class='col col-example'> <img src='img/chums/q4/b.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q008()> B </button> </div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q4/c.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q008()> C </button> </div> <div class='col col-example'> <img src='img/chums/q4/d.png'  class = 'choice-img' /> <button  class='blue001 btn btn-danger btn-rounded guess0' onclick=q007()> D </button> </div>"];
 
-          $("#checkMes02").hide()
-          $("#checkMes03").hide()
+    var i = ["<h2  class='headline-secondary--grouped'>How to check the Ranking </h2> <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q5/a.png'  class = 'choice-img' /> <button class=' blue001 btn btn-danger btn-rounded guess0' onclick=q009()> A </button> </div>  <div class='col col-example'> <img src='img/chums/q5/b.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q010()> B </button> </div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q5/c.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q010()> C </button> </div> <div class='col col-example'> <img src='img/chums/q5/d.png'  class = 'choice-img' /> <button  class='blue001 btn btn-danger btn-rounded guess0' onclick=q010()> D </button> </div>"];
+
+    var j = ["<h2  class='headline-secondary--grouped'> Which is a perfect example of a standard live broadcast? </h2> <div class'container'> <div class='row' > <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q6/a.png'  class = 'choice-img' /> <button class=' blue001 btn btn-danger btn-rounded guess0' onclick=q011()> A </button> </div>  <div class='col col-example'> <img src='img/chums/q6/b.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q012()> B </button> </div> <div class='w-100'></div> <div class='col col-example'> <img src='img/chums/q6/c.png'  class = 'choice-img' /> <button  class=' blue001 btn btn-danger btn-rounded guess0' onclick=q012()> C </button> </div> <div class='col col-example'> <img src='img/chums/q6/d.png'  class = 'choice-img' /> <button  class='blue001 btn btn-danger btn-rounded guess0' onclick=q0012()> D </button> </div>"];
 
 
-});
+    var random001 = Math.floor(Math.random() * a.length);
+    var random002 = Math.floor(Math.random() * b.length);
+    var random003 = Math.floor(Math.random() * c.length);
+    var random004 = Math.floor(Math.random() * h.length);
+    var random005 = Math.floor(Math.random() * i.length);
+    var random006 = Math.floor(Math.random() * j.length);
 
 
-        
-        function begin001() {
-            question001.innerHTML = f++;
-            disappear001.innerHTML = "";
-            if (shuffle001 == "0") {
-                message001.innerHTML = a[random001];
+    var d = [" <h2 class='pop-correct'>Correct</h2><img src='img/chums/correct.png' class='correct-img'>"];
+    var e = ["<h2 class='pop-correct'>Wrong</h2><img src='img/chums/wrong.png' class='correct-img'>"];
 
-            } else if (shuffle001 == "1") {
-                message001.innerHTML = b[random002];
+    var f = 0;
+    f++;
+    var g = 0;
+    g++;
 
-            } else if (shuffle001 == "2") {
-              message001.innerHTML = c[random003];
+    $("#closeBtn").click(function () {
 
-            } else if (shuffle001 == "3") {
-              message001.innerHTML = h[random004];
+      $("#checkMes02").hide()
+      $("#checkMes03").hide()
 
-            } else if (shuffle001 == "4") {
-                message001.innerHTML = i[random005];
 
-            } else if (shuffle001 == "5") {
-                message001.innerHTML = j[random006];
+    });
 
-            } 
-            
-        }
 
-        function q001() {
-            score001.innerHTML = g++;
-            message001.innerHTML = "";
-            message002.innerHTML = d;
-            message003.innerHTML = "  <div class='modal-footer'><button class='blue002 btn btn-outline-primary' onclick=next001()>Next</button> </div>";
-        }
 
-        function q002() {
-            message001.innerHTML = "";
-            message002.innerHTML = e;
-            message003.innerHTML = "<div class='modal-footer'><button class='blue002 btn btn-outline-primary' onclick=next001()>Next</button> </div>";
-        }
+    function begin001() {
+      question001.innerHTML = f++;
+      disappear001.innerHTML = "";
+      if (shuffle001 == "0") {
+        message001.innerHTML = a[random001];
 
-        function next001() {
-            random002 = Math.floor(Math.random() * b.length);
-            if (f > 6 ) {
-                message001.innerHTML = "";
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-                document.getElementById("question").style.display = 'block';
-            } else {
-                message001.innerHTML = b[random002];
-                question001.innerHTML = f++ ;
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-            }
-        }
+      } else if (shuffle001 == "1") {
+        message001.innerHTML = b[random002];
 
-        function q003() {
-            score001.innerHTML = g++;
-            message001.innerHTML = "";
-            message002.innerHTML = d;
-            message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next002()>Next</button> </div>";
-        }
+      } else if (shuffle001 == "2") {
+        message001.innerHTML = c[random003];
 
-        function q004() {
-            message001.innerHTML = "";
-            message002.innerHTML = e;
-            message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next002()>Next</button> </div>";
-        }
+      } else if (shuffle001 == "3") {
+        message001.innerHTML = h[random004];
 
-        function next002() {
-            random003 = Math.floor(Math.random() * c.length);
-            if (f > 6) {
-                message001.innerHTML = "";
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-                document.getElementById("question").style.display = 'block';
-            } else {
-                message001.innerHTML = c[random003];
-                question001.innerHTML = f++;
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-            }
-        }
+      } else if (shuffle001 == "4") {
+        message001.innerHTML = i[random005];
 
-        function q005() {
-            // score001.innerHTML = g++;
-            // checkBTN.innerHTML = "";
-            // checkMes02.innerHTML = d;
-            // checkMes03.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary closeBtn' onclick=next003()>Next</button> </div>";
+      } else if (shuffle001 == "5") {
+        message001.innerHTML = j[random006];
 
- 
-            $("input[type='checkbox'].abc").change(function(){
-    var a = $("input[type='checkbox'].abc");
-    if(a.length == a.filter(":checked").length){
+      }
+
+    }
+
+    function q001() {
       score001.innerHTML = g++;
       message001.innerHTML = "";
       message002.innerHTML = d;
-      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next003()>Next</button> </div>";
-     
+      message003.innerHTML = "  <div class='modal-footer'><button class='blue002 btn btn-outline-primary' onclick=next001()>Next</button> </div>";
     }
 
-  });
+    function q002() {
+      message001.innerHTML = "";
+      message002.innerHTML = e;
+      message003.innerHTML = "<div class='modal-footer'><button class='blue002 btn btn-outline-primary' onclick=next001()>Next</button> </div>";
+    }
 
+    function next001() {
+      random002 = Math.floor(Math.random() * b.length);
+      if (f > 6) {
+        message001.innerHTML = "";
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+        document.getElementById("question").style.display = 'block';
+      } else {
+        message001.innerHTML = b[random002];
+        question001.innerHTML = f++;
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+      }
+    }
+
+    function q003() {
+      score001.innerHTML = g++;
+      message001.innerHTML = "";
+      message002.innerHTML = d;
+      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next002()>Next</button> </div>";
+    }
+
+    function q004() {
+      message001.innerHTML = "";
+      message002.innerHTML = e;
+      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next002()>Next</button> </div>";
+    }
+
+    function next002() {
+      random003 = Math.floor(Math.random() * c.length);
+      if (f > 6) {
+        message001.innerHTML = "";
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+        document.getElementById("question").style.display = 'block';
+      } else {
+        message001.innerHTML = c[random003];
+        question001.innerHTML = f++;
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+      }
+    }
+
+    function q005() {
+     
+     
+      
+      $("input[type='checkbox'].abc").change(function () {
+        var a = $("input[type='checkbox'].abc");
+        if (a.length == a.filter(":checked").length) {
+          score001.innerHTML= g++
+          message001.innerHTML = "";
+          message002.innerHTML = d;
+          message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next003()>Next</button> </div>";
+       
         }
 
-        function q006() {
-          message001.innerHTML = "";
-            message002.innerHTML = e;
-            message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary closeBtn' onclick='next002()'>Next</button> </div>";
+      });
+
+    }
+
+
+    function q015() {
+     
+    
+     $("input[type='checkbox'].abc").change(function () {
+       var a = $("input[type='checkbox'].abc");
+       if (a.length == a.filter(":checked").length) {
+       
+         message001.innerHTML = "";
+         message002.innerHTML = d;
+         message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next003()>Next</button> </div>";
+      
+       }
+
+     });
+
+   }
+   function q025() {
+     
+    
+     $("input[type='checkbox'].abc").change(function () {
+       var a = $("input[type='checkbox'].abc");
+       if (a.length == a.filter(":checked").length) {
+       
+         message001.innerHTML = "";
+         message002.innerHTML = d;
+         message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next003()>Next</button> </div>";
+      
+       }
+
+     });
+
+   }
+
+    function q006() {
+      message001.innerHTML = "";
+      message002.innerHTML = e;
+      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary closeBtn' onclick='next003()'>Next</button> </div>";
+
+
+    }
+
+    function next003() {
+      random004 = Math.floor(Math.random() * h.length);
+      if (f > 6) {
+        message001.innerHTML = "";
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+        document.getElementById("question").style.display = 'block';
+
+      } else {
+        message001.innerHTML = h[random004];
+        question001.innerHTML = f++;
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+      }
+    }
+
+    function q007() {
+      score001.innerHTML = g++;
+      message001.innerHTML = "";
+      message002.innerHTML = d;
+      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next004()>Next</button> </div>";
+    }
+
+    function q008() {
+      message001.innerHTML = "";
+      message002.innerHTML = e;
+      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next004()>Next</button> </div>";
+    }
+
+    function next004() {
+      random005 = Math.floor(Math.random() * i.length);
+      if (f > 6) {
+        message001.innerHTML = "";
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+        document.getElementById("question").style.display = 'block';
+      } else {
+        message001.innerHTML = i[random005];
+        question001.innerHTML = f++;
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+      }
+    }
+
+    function q009() {
+      score001.innerHTML = g++;
+      message001.innerHTML = "";
+      message002.innerHTML = d;
+      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next005()>Next</button> </div>";
+    }
+
+    function q010() {
+      message001.innerHTML = "";
+      message002.innerHTML = e;
+      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next005()>Next</button> </div>";
+    }
+
+    function next005() {
+      random006 = Math.floor(Math.random() * j.length);
+      if (f > 6) {
+        message001.innerHTML = "";
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+        document.getElementById("question").style.display = 'block';
+      } else {
+        message001.innerHTML = j[random006];
+        question001.innerHTML = f++;
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+      }
+    }
+
+    function q011() {
+      score001.innerHTML = g++;
+      message001.innerHTML = "";
+      message002.innerHTML = d;
+      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next010()>Next</button> </div>";
+    }
+
+    function q012() {
+      message001.innerHTML = "";
+      message002.innerHTML = e;
+      message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next010()>Next</button> </div>";
+    }
 
     
-        }
+    function next010() {
+      if (f > 6) {
+        message001.innerHTML = "";
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+        document.getElementById("question").style.display = 'block';
+      } else {
+        message001.innerHTML = a[random001];
+        question001.innerHTML = f++;
+        message002.innerHTML = "";
+        message003.innerHTML = "";
+      }
+    }
 
-        function next003() {
-            random004 = Math.floor(Math.random() * h.length);
-            if (f > 6) {
-                message001.innerHTML = "End of Quiz.";
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-                document.getElementById("question").style.display = 'block';
+    //custom js
 
-            } else {
-                message001.innerHTML = h[random004];
-                question001.innerHTML = f++;
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-            }
-        }
-
-        function q007() {
-            score001.innerHTML = g++;
-            message001.innerHTML = "";
-            message002.innerHTML = d;
-            message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next004()>Next</button> </div>";
-        }
-
-        function q008() {
-            message001.innerHTML = "";
-            message002.innerHTML = e;
-            message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next004()>Next</button> </div>";
-        }
-
-        function next004() {
-            random005 = Math.floor(Math.random() * i.length);
-            if (f > 6) {
-                message001.innerHTML = "End of Quiz.";
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-                document.getElementById("question").style.display = 'block';
-            } else {
-                message001.innerHTML = i[random005];
-                question001.innerHTML = f++;
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-            }
-        }
-
-        function q009() {
-            score001.innerHTML = g++;
-            message001.innerHTML = "";
-            message002.innerHTML = d;
-            message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next005()>Next</button> </div>";
-        }
-
-        function q010() {
-            message001.innerHTML = "";
-            message002.innerHTML = e;
-            message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next005()>Next</button> </div>";
-        }
-
-        function next005() {
-            random006 = Math.floor(Math.random() * j.length);
-            if (f > 6) {
-                message001.innerHTML = "";
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-                document.getElementById("question").style.display = 'block';
-            } else {
-                message001.innerHTML = j[random006];
-                question001.innerHTML = f++;
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-            }
-        }
-
-        function q011() {
-            score001.innerHTML = g++;
-            message001.innerHTML = "";
-            message002.innerHTML = d;
-            message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next010()>Next</button> </div>";
-        }
-
-        function q012() {
-            message001.innerHTML = "";
-            message002.innerHTML = e;
-            message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next010()>Next</button> </div>";
-        }
-
-        // function next006() {
-        //     random007 = Math.floor(Math.random() * k.length);
-        //     if (f > 6) {
-        //         message001.innerHTML = "End of Quiz.";
-        //         message002.innerHTML = "";
-        //         message003.innerHTML = "";
-        //     } else {
-        //         message001.innerHTML = k[random007];
-        //         question001.innerHTML = f++;
-        //         message002.innerHTML = "";
-        //         message003.innerHTML = "";
-        //     }
-        // }
-
-        // function q013() {
-        //     score001.innerHTML = g++;
-        //     message001.innerHTML = "";
-        //     message002.innerHTML = d;
-        //     message003.innerHTML = "<button class=blue002 onclick=next007()>Next</button>";
-        // }
-
-        // function q014() {
-        //     message001.innerHTML = "";
-        //     message002.innerHTML = e;
-        //     message003.innerHTML = "<button class=blue002 onclick=next007()>Next</button>";
-        // }
-
-        // function next007() {
-        //     random008 = Math.floor(Math.random() * l.length);
-        //     if (f > 6) {
-        //         message001.innerHTML = "End of Quiz.";
-        //         message002.innerHTML = "";
-        //         message003.innerHTML = "";
-        //     } else {
-        //         message001.innerHTML = l[random008];
-        //         question001.innerHTML = f++;
-        //         message002.innerHTML = "";
-        //         message003.innerHTML = "";
-        //     }
-        // }
-
-        // function q015() {
-        //     score001.innerHTML = g++;
-        //     message001.innerHTML = "";
-        //     message002.innerHTML = d;
-        //     message003.innerHTML = "<button class=blue002 onclick=next008()>Next</button>";
-        // }
-
-        // function q016() {
-        //     message001.innerHTML = "";
-        //     message002.innerHTML = e;
-        //     message003.innerHTML = "<button class=blue002 onclick=next008()>Next</button>";
-        // }
-
-        // function next008() {
-        //     random009 = Math.floor(Math.random() * m.length);
-        //     if (f > 6) {
-        //         message001.innerHTML = "End of Quiz.";
-        //         message002.innerHTML = "";
-        //         message003.innerHTML = "";
-        //     } else {
-        //         message001.innerHTML = m[random009];
-        //         question001.innerHTML = f++;
-        //         message002.innerHTML = "";
-        //         message003.innerHTML = "";
-        //     }
-        // }
-
-        // function q017() {
-        //     score001.innerHTML = g++;
-        //     message001.innerHTML = "";
-        //     message002.innerHTML = d;
-        //     message003.innerHTML = "<button class=blue002 onclick=next010()>Next</button>";
-        // }
-
-        // function q018() {
-        //     message001.innerHTML = "";
-        //     message002.innerHTML = e;
-        //     message003.innerHTML = "<button class=blue002 onclick=next010()>Next</button>";
-        // }
-
-        // function next009() {
-        //     random010 = Math.floor(Math.random() * n.length);
-        //     if (f > 10) {
-        //         message001.innerHTML = "End of Quiz.";
-        //         message002.innerHTML = "";
-        //         message003.innerHTML = "";
-        //     } else {
-        //         message001.innerHTML = n[random010];
-        //         question001.innerHTML = f++;
-        //         message002.innerHTML = "";
-        //         message003.innerHTML = "";
-        //     }
-        // }
-
-        // function q019() {
-        //     score001.innerHTML = g++;
-        //     message001.innerHTML = "";
-        //     message002.innerHTML = d;
-        //     message003.innerHTML = "<button class=blue002 onclick=next010()>Next</button>";
-        // }
-
-        // function q020() {
-        //     message001.innerHTML = "";
-        //     message002.innerHTML = e;
-        //     message003.innerHTML = "<button class=blue002 onclick=next010()>Next</button>";
-        // }
-
-        function next010() {
-            if (f > 6) {
-                message001.innerHTML = "";
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-                document.getElementById("question").style.display = 'block';
-            } else {
-                message001.innerHTML = a[random001];
-                question001.innerHTML = f++;
-                message002.innerHTML = "";
-                message003.innerHTML = "";
-            }
-        }
-        
-//custom js
-
-$(".quiz-card").hide();
-$("#question").hide();
+    $(".quiz-card").hide();
+    $("#question").hide();
 
 
-$(document).ready(function(){
- 
-  $(".show-quiz").click(function(){
-    $(".quiz-card").show();
-    $(".start-quiz").hide();
-  });
+    $(document).ready(function () {
 
- 
-});
+      $(".show-quiz").click(function () {
+        $(".quiz-card").show();
+        $(".start-quiz").hide();
+      });
 
 
-$("a[href='#defaultInline1']").on("click", openPopUp);
-$("#defaultInline1").on("click", closePopUp);
-
-function i()
-{
-  alert("afa");
-}
-
-function openPopUp()
-{
-  $("#defaultInline1").css({"display": "block",
-                   "opacity": 1});
-}
-
-function closePopUp()
-{
-  $("#defaultInline1").css({"display": "none",
-                   "opacity": 0});
-}
-
-    </script>
+    });
 
 
+
+
+  </script>
 
 
 </body>
+
 </html>
