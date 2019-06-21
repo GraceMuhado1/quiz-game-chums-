@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>firebase by seegatesite.com</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+</head>
+<body>
+	<section class="section">
+		<div class="container">
+			
+			<div class="content">
+				<button id="btnAdd" class="button"><i class="fa fa-plus"></i> Add Person</button>
+			</div>
+			<div id="card-list" class="columns is-mobile">
+
+			</div>
+        </div>
+        
+
+
+        
+		<div id="modal" class="modal">
+			<div class="modal-background"></div>
+			<div class="modal-card">
+				<header class="modal-card-head">
+					<p class="modal-card-title">Person Form</p>
+					<button class="btnClose delete" aria-label="close"></button>
+				</header>
+				<section class="modal-card-body">
+					<div class="field">
+						<label class="label">Name</label>
+						<div class="control">
+							<input type="hidden" id="txtType">
+							<input type="hidden" id="txtKey">
+							<input class="input" id="txtName" type="text" placeholder="Name">
+						</div>
+						<p class="help"> </p>
+					</div>
+					<div class="field">
+						<label class="label">Email</label>
+						<div class="control">
+                            <input class="input" id="txtEmail" type="text" placeholder="Email">
+						
+						</div>
+<h2 class="headline-secondary--grouped"> Your Score is: <text id="score001">100</text>
+              out of <text id="question001">0</text><br /></h2>
+						<p class="help"> </p>
+					</div>
+					<!-- <div class="field">
+						<label class="label">Profile Picture</label>
+						<div class="control">
+							<input class="input" id="txtPic" type="text" placeholder="Profile picture url">
+						</div>
+						<p class="help"></p>
+					</div> -->
+				</section>
+				<footer class="modal-card-foot">
+                    <button id="btnSave" class="button is-success">Save changes</button>
+					<button id="btnSavetime" class="button is-success">Save changes</button>
+					
+				
+					<button id="btnClose" class="button">Cancel</button>
+				</footer>
+			</div>
+		</div>
+	</section>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+	<script>
+		var nextkey =0;
+		var config = {
+			apiKey: "AIzaSyDgQZ-k-GuYVHkGWhGKrwCr18m8MnhMDl0",
+    authDomain: "chums-quizgame.firebaseapp.com",
+    databaseURL: "https://chums-quizgame.firebaseio.com",
+    projectId: "chums-quizgame",
+    storageBucket: "chums-quizgame.appspot.com",
+    messagingSenderId: "1004527595883",
+    appId: "1:1004527595883:web:5b3a4734ea4c7e27"
+		};
+		firebase.initializeApp(config);
+		var database = firebase.database();
+
+		
+database.ref('chums_q/').on('child_added', function(data) {
+			add_data_table(data.val().score,data.val().username,data.val().profile_picture,data.val().chumsId,data.key);
+			var lastkey = data.key;
+			nextkey = parseInt(lastkey)+1;
+		});
+		database.ref('chums_q/').on('child_changed', function(data) {
+			update_data_table(data.val().username,data.val().profile_picture,data.val().chumsId,data.key)
+		});
+		database.ref('chums_q/').on('child_removed', function(data) {
+			remove_data_table(data.key)
+		});
+
+		function add_data_table(name,pic,email,key,score){
+			$("#card-list").append('<div class="column is-3" id="'+key+'"><div class="card"><div class="card-content"><div class="media"><div class="media-content"><p class="title is-4">'+name+'</p><p class="subtitle is-6">@'+email+'</p></div></div></div><footer class="card-footer"><a href="#" data-key="'+key+'" class="card-footer-item btnEdit">Edit</a><a href="#" class="card-footer-item btnRemove"  data-key="'+key+'">Remove</a></footer></div></div>');
+		}
+		function update_data_table(name,pic,email,key){
+			$("#card-list #"+key).html('<div class="card"><div class="card-image"><figure class="image is-4by3"><img src="'+pic+'"></figure></div><div class="card-content"><div class="media"><div class="media-content"><p class="title is-4">'+name+'</p><p class="subtitle is-6">@'+email+'</p></div></div></div><footer class="card-footer"><a href="#" class="card-footer-item btnEdit"  data-key="'+key+'">Edit</a><a  data-key="'+key+'" href="#" class="card-footer-item btnRemove">Remove</a></footer></div>');
+		}
+		function remove_data_table(key){
+			$("#card-list #"+key).remove();
+		}
+		function new_data(name,email,pic,key,score){
+			database.ref('chums_q/' + key).set({
+				chumsId: name,
+				username: email,
+				profile_picture : pic,
+				totalscore:score
+			});
+		}
+		function update_data(name,email,pic,key){
+			database.ref('chums_q/' + key).update({
+				username: name,
+				email: email,
+				profile_picture : pic
+			});
+		}
+		$( "#btnAdd" ).click(function() {
+			$("#txtName").val("");
+			$("#txtEmail").val("");
+			$("#txtPic").val("");
+			$("#txtType").val("N");
+			$("#txtKey").val("0");
+			// $("#score001").val("");
+
+      document.getElementById("score001").value = g++;
+
+			$( "#modal" ).addClass( "is-active" );
+
+		});
+		$("#btnSave" ).click(function() {
+
+            
+
+            var currentTime = Date.now();
+            
+            // new_data($("#txtName").val(),$("#txtEmail").val(),$("#txtPic").val(),nextkey);
+            
+			if($("#txtType").val() == 'N'){
+				database.ref('chums_q/').once("value").then(function(snapshot) {
+					if(snapshot.numChildren()==0){
+						nextkey = 1;
+					}
+					new_data($("#txtName").val(),$("#txtEmail").val(),$("#txtPic").val(),$("#score001").val(),$("#score001").val(),nextkey,);
+
+                    
+				});
+			}
+            else{
+				update_data($("#txtName").val(),$("#txtEmail").val(),$("#txtPic").val(),$("#txtKey").val());
+			}
+			$("#btnClose").click();
+		});
+		$(document).on("click",".btnEdit",function(event){
+			event.preventDefault();
+			key = $(this).attr("data-key");
+			database.ref('chums_q/'+key).once("value").then(function(snapshot){
+				$("#txtName").val(snapshot.val().username);
+				$("#txtEmail").val(snapshot.val().chumsId);
+				$("#txtPic").val(snapshot.val().profile_picture);		
+				$("#txtType").val("E");	
+				$("#txtKey").val(key);	
+			});
+			$( "#modal" ).addClass( "is-active" );
+		});
+		$(document).on("click",".btnRemove",function(event){
+			event.preventDefault();
+			key = $(this).attr("data-key");
+			database.ref('chums_q/' + key).remove();
+		})
+		
+		$( "#btnClose,.btnClose" ).click(function() {
+			$( "#modal" ).removeClass( "is-active" );
+		});
+
+
+
+        // $("#btnSavetime").click(function(){
+        //     var currentTime = Date.now();
+        //     var ref = firebase.database().ref('chums_q/').update({
+        //         [currentTime] : true
+        //     })
+        // })
+	</script>
+</body>
+</html>
