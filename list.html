@@ -43,11 +43,11 @@
 				<thead>
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col">First</th>
-						<th scope="col">Last</th>
-						<th scope="col">Handle</th>
+						<th scope="col">Chums ID</th>
+						<th scope="col">Chums Username</th>
+						<th scope="col">Score</th>
 						<th scope="col">Edit</th>
-						<th scope="col">Handle</th>
+						<th scope="col">Remove</th>
 					</tr>
 
 				</thead>
@@ -137,7 +137,7 @@
 		});
 
 		function add_data_table(id, name, score, key) {
-			$("#chums-table").append('<tr><th scope="row">' + key + '</th><td>' + id + '</td><td>' + name + '</td><td>' + score + '</td> <td><a href="#" data-key="' + key + '" class=" btnEdit">Edit</a></td><td><a href="#" class="btnRemove"  data-key="' + key + '">Remove</a></td></tr>');
+			$("#chums-table").append('<tr><th scope="row">' + key + '</th><td>' + id + '</td><td>' + name + '</td><td>' + score + '</td> <td><a href="#" data-key="' + key + '" class=" btnEdit"> <button class="btn bg-btn  btn-rounded z-depth-1a" style = "color:white">Edit</button></a></td><td><a href="#" class="btnRemove"  data-key="' + key + '"><button class="btn bg-btn  btn-rounded z-depth-1a" style = "color:white">Remove</button></a></td></tr>');
 		}
 
 		function update_data_table(id, name, score, key) {
