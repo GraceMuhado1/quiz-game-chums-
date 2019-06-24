@@ -80,13 +80,15 @@
       <div class="text-center mb-3 q-start">
         <button type="button" class="btn bg-btn btn-block btn-rounded z-depth-1a show-quiz blue002"
           onclick="begin001()">Start</button>
-
+        
+          
+          
           
           <section class="section">
               <div class="container">
                 
                 <div class="content">
-                  <button id="btnAdd" class="button"><i class="fa fa-plus"></i> Add Person</button>
+                  <button id="btnAdd" type="button" class="btn bg-btn btn-block btn-rounded z-depth-1a "> Add your info</button>
                 </div>
                 <div id="card-list" class="columns is-mobile">
           
@@ -117,23 +119,33 @@
                       <label class="label">Email</label>
                       <div class="control">
                                       <input class="input" id="txtEmail" type="text" placeholder="Email">
-                                      <!-- <input class="input" id="score001" type="text" placeholder="Email"> -->
+                                   
                                    
                       </div>
                       <p class="help"> </p>
                     </div>
+                    <div class="control">
+                      <input class="input" type = "text" id="myText" type="text" placeholder="Chums ID" value = "">
+                    </div>
+                  
+                    <div class="control">
+                      <input class="input" type = "text" id="myusername" type="text" placeholder="Chums Username" value = "">
+                    </div>
+
                     <div class="field">
                       <label class="label">Profile Picture</label>
                       <div class="control">
-                        <input class="input" id="score001" type="text" placeholder="Profile picture url">
+                        <input class="input" id="score101" type="text" placeholder="Profile picture url">
                       </div>
                       <p class="help"></p>
                     </div>
                   </section>
                   <footer class="modal-card-foot">
 
-                    
-                              <button id="btnSave" class="button is-success">Save changes</button>
+                   
+                              <button onclick="myFunction()" class="button is-success">Save changes</button>
+
+                              <!-- <button id = "btnSave" class="button is-success">Save changes</button> -->
                             
                     <button id="btnClose" class="button">Cancel</button>
                   </footer>
@@ -165,11 +177,18 @@
             <div class="text-center mb-3 q-start"><button class=" btn bg-btn retry_btn btn-block btn-rounded z-depth-1a"
                 value="Refresh Page" onClick="history.go(0)">Retry Quiz</button></div>
 
+                <button onclick="myFunction()" class="button is-success">Save changes</button>
+                <div class="text-center mb-3 q-start"><button class="btn btn bg-btn retry_btn btn-block btn-rounded z-depth-1a"
+                  id = "btnSave" >Reditz</button></div>
 
-                <div class="text-center mb-3 q-start"><button class="btnEdit btn bg-btn retry_btn btn-block btn-rounded z-depth-1a"
-                  value="Refresh Page" >Reditz</button></div>
+                  <!-- <button onclick="myscore()" class="button is-success">score changes</button> -->
+                  
 
+                  <p id="demo"></p>
 
+          
+                  <p id="demoName"></p>
+                  <p id="totscore"></p>
           </div>
           <hr />
 
@@ -211,7 +230,6 @@
 	<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
 
   <script>
-
 
     function unCheck() {
       document.getElementById("defaultInline1").checked = false;
@@ -267,35 +285,59 @@
 			});
 		}
 
+
+
+    function myFunction() {
+  var x = document.getElementById("myText").value;
+  document.getElementById("txtName").value = x;
+  document.getElementById("demo").innerHTML = x;
+
+
+var username = document.getElementById("myusername").value;
+document.getElementById("txtEmail").value = username;
+  document.getElementById("demoName").innerHTML = username;
+
+}
+
+
+
 		$( "#btnAdd" ).click(function() {
 			$("#txtName").val("");
 			$("#txtEmail").val("");
-      document.getElementById("score001").value = g++;
+      $("#score101").val("");
+      // document.getElementById("score101").value = g++;
 			$("#txtType").val("N");
 			$("#txtKey").val("0");
 			$( "#modal" ).addClass( "is-active" );
 
+
+
+
+
+
+
 		});
 		$("#btnSave" ).click(function() {
-
-            
-
             var currentTime = Date.now();
+
             
-            // new_data($("#txtName").val(),$("#txtEmail").val(),$("#score001").val(),nextkey);
-            
+  var scoring = document.getElementById("score001").innerHTML;
+document.getElementById("score101").value = scoring;
+document.getElementById("totscore").innerHTML = scoring;
+
+       
 			if($("#txtType").val() == 'N'){
 				database.ref('chums_q/').once("value").then(function(snapshot) {
 					if(snapshot.numChildren()==0){
 						nextkey = 1;
 					}
-					new_data($("#txtName").val(),$("#txtEmail").val(),$("#score001").val(),nextkey);
+					new_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),nextkey);
 
                     
 				});
 			}
       else{
-				update_data($("#txtName").val(),$("#txtEmail").val(),$("#score001").val(),$("#txtKey").val());
+				update_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),$("#txtKey").val());
 			}
 			$("#btnClose").click();
 		});
@@ -306,7 +348,7 @@
 			database.ref('chums_q/'+key).once("value").then(function(snapshot){
 				$("#txtName").val(snapshot.val().username);
 				$("#txtEmail").val(snapshot.val().chumsId);
-				$("#score001").val(snapshot.val().totalscore);		
+				$("#score101").val(snapshot.val().totalscore);		
 				$("#txtType").val("E");	
 				$("#txtKey").val(key);	
 			});
@@ -389,9 +431,9 @@
     }
 
     function q001() {
-      // score001.innerHTML = g++;
+      score001.innerHTML = g++;
 
-      document.getElementById("score001").value = g++;
+      // document.getElementById("score001").value = g++;
 
 
       message001.innerHTML = "";
@@ -412,7 +454,6 @@
         message002.innerHTML = "";
         message003.innerHTML = "";
         document.getElementById("question").style.display = 'block';
-        update_data($("#txtName").val(),$("#txtEmail").val(),$("#score001").val(),$("#txtKey").val()); 
       } else {
         message001.innerHTML = b[random002];
         question001.innerHTML = f++;
@@ -422,8 +463,8 @@
     }
 
     function q003() {
-      // score001.innerHTML = g++;
-      document.getElementById("score001").value = g++;
+      score001.innerHTML = g++;
+      // document.getElementById("score001").value = g++;
       message001.innerHTML = "";
       message002.innerHTML = d;
       message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next002()>Next</button> </div>";
@@ -442,7 +483,6 @@
         message002.innerHTML = "";
         message003.innerHTML = "";
         document.getElementById("question").style.display = 'block';
-        update_data($("#txtName").val(),$("#txtEmail").val(),$("#score001").val(),$("#txtKey").val());
       } else {
         message001.innerHTML = c[random003];
         question001.innerHTML = f++;
@@ -458,11 +498,11 @@
       $("input[type='checkbox'].abc").change(function () {
         var a = $("input[type='checkbox'].abc");
         if (a.length == a.filter(":checked").length) {
-          // score001.innerHTML= g++
+          score001.innerHTML= g++
           message001.innerHTML = "";
           message002.innerHTML = d;
           message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next003()>Next</button> </div>";
-          document.getElementById("score001").value = g++;
+          // document.getElementById("score001").value = g++;
         }
 
       });
@@ -518,7 +558,6 @@
         message002.innerHTML = "";
         message003.innerHTML = "";
         document.getElementById("question").style.display = 'block';
-        update_data($("#txtName").val(),$("#txtEmail").val(),$("#score001").val(),$("#txtKey").val());
    
       } else {
         message001.innerHTML = h[random004];
@@ -530,8 +569,8 @@
 
     function q007() {
 
-      document.getElementById("score001").value = g++;
-      // score001.innerHTML = g++;
+      // document.getElementById("score001").value = g++;
+      score001.innerHTML = g++;
       message001.innerHTML = "";
       message002.innerHTML = d;
       message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next004()>Next</button> </div>";
@@ -561,9 +600,9 @@
     }
 
     function q009() {
-      // score001.innerHTML = g++;
+      score001.innerHTML = g++;
 
-      document.getElementById("score001").value = g++;
+      // document.getElementById("score001").value = g++;
       message001.innerHTML = "";
       message002.innerHTML = d;
       message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next005()>Next</button> </div>";
@@ -582,7 +621,6 @@
         message002.innerHTML = "";
         message003.innerHTML = "";
         document.getElementById("question").style.display = 'block';
-        update_data($("#txtName").val(),$("#txtEmail").val(),$("#score001").val(),$("#txtKey").val());
 
       } else {
         message001.innerHTML = j[random006];
@@ -593,9 +631,9 @@
     }
 
     function q011() {
-      // score001.innerHTML = g++;
+      score001.innerHTML = g++;
 
-      document.getElementById("score001").value = g++;
+      // document.getElementById("score001").value = g++;
       message001.innerHTML = "";
       message002.innerHTML = d;
       message003.innerHTML = "<div class='modal-footer'> <button class='blue002 btn btn-outline-primary' onclick=next010()>Next</button> </div>";
@@ -611,7 +649,7 @@
     function next010() {
       if (f > 6) {
 
-        update_data($("#txtName").val(),$("#txtEmail").val(),$("#score001").val(),$("#txtKey").val());
+       
         message001.innerHTML = "";
         message002.innerHTML = "";
         message003.innerHTML = "";
@@ -629,7 +667,9 @@
     $(".quiz-card").hide();
     $("#question").hide();
 
-$(".card-list").hide()
+$("#card-list").hide()
+
+$(".field").hide()
 
     $(document).ready(function () {
 
