@@ -82,13 +82,13 @@
           onclick="begin001()">Start</button>
         
           
-          
+          <button id="btnAdd" type="button" class="btn bg-btn btn-block btn-rounded z-depth-1a" style = "color: white;font-size: 18px;"> Add your info</button>
           
           <section class="section">
               <div class="container">
                 
                 <div class="content">
-                  <button id="btnAdd" type="button" class="btn bg-btn btn-block btn-rounded z-depth-1a "> Add your info</button>
+                  <!-- <button id="btnAdd" type="button" class="btn bg-btn btn-block btn-rounded z-depth-1a "> Add your info</button> -->
                 </div>
                 <div id="card-list" class="columns is-mobile">
           
@@ -102,7 +102,7 @@
                 <div class="modal-background"></div>
                 <div class="modal-card">
                   <header class="modal-card-head">
-                    <p class="modal-card-title">Person Form</p>
+                    <p class="modal-card-title">Your Info</p>
                     <button class="btnClose delete" aria-label="close"></button>
                   </header>
                   <section class="modal-card-body">
@@ -124,12 +124,12 @@
                       </div>
                       <p class="help"> </p>
                     </div>
-                    <div class="control">
-                      <input class="input" type = "text" id="myText" type="text" placeholder="Chums ID" value = "">
+                    <div class="control" >
+                      <input class="input" type = "text" id="myText" class = "form-control" placeholder="Chums ID" value = "">
                     </div>
                   
-                    <div class="control">
-                      <input class="input" type = "text" id="myusername" type="text" placeholder="Chums Username" value = "">
+                    <div class="control" style = "margin-top: 12px;">
+                      <input class="input" type = "text" id="myusername" class = "form-control"  placeholder="Chums Username" value = "">
                     </div>
 
                     <div class="field">
@@ -143,11 +143,12 @@
                   <footer class="modal-card-foot">
 
                    
-                              <button onclick="myFunction()" class="button is-success">Save changes</button>
+                              <button onclick="myFunction()" class="btn bg-btn btn-block btn-rounded z-depth-1a" style = "width: 50%;
+                              color: white;">Save changes</button>
 
                               <!-- <button id = "btnSave" class="button is-success">Save changes</button> -->
                             
-                    <button id="btnClose" class="button">Cancel</button>
+                    <!-- <button id="btnClose" class="button">Cancel</button> -->
                   </footer>
                 </div>
               </div>
@@ -161,34 +162,37 @@
 
   <div class="card quiz-card">
     <div class="view overlay">
+        <div class="container">
+            <div class="row chums-info">
+              <div class="col">
+                  <h4 style = "font-weight:bold">Chums Id:</h4> <p class = "text-info" id="demo"></p>  
+                  
+                   
+              </div>
+              <div class="col">
+                  <h4 style = "font-weight:bold">Username:</h4> <p id="demoName" class = "text-info"></p>
+              </div>
+            </div>
+       
     </div>
     <div class="card-body">
       <div class="grid quiz-body">
-        <div id="quiz" class="centered grid__col--8">
+        <div id="quiz" class="centered grid__col--8" style = "margin-top: -75px;">
           <!-- <div class="q-question">
             <h2 id="message001" class="headline-secondary--grouped"></h2>
           </div> -->
-          <div id="question">
-            <h1>Quiz Over</h1>
-            <h2 class="headline-secondary--grouped"> Your Score is: <text id="score001"></text>
+          <div id="question" style = "position: relative;
+          /* margin-top: 36px; */
+          top: 34px;">
+            <h1 style = "font-size:35px" >Quiz Over</h1>
+            <h2 class="headline-secondary--grouped" style ="font-size: 33px;margin-top: 16px;"> Your Score is: <text id="score001"></text>
               out of <text id="question001">0</text><br /></h2>
-              <p id="question001"></p>
-         
+              <!-- <p id="question001"></p> -->
+              <p id="totscore" style = "display:none"></p>
             <div class="text-center mb-3 q-start"><button class=" btn bg-btn retry_btn btn-block btn-rounded z-depth-1a"
-                value="Refresh Page" onClick="history.go(0)">Retry Quiz</button></div>
+                value="Refresh Page" onClick="history.go(0)"   >Retry Quiz</button></div>
 
-                <button onclick="myFunction()" class="button is-success">Save changes</button>
-                <div class="text-center mb-3 q-start"><button class="btn btn bg-btn retry_btn btn-block btn-rounded z-depth-1a"
-                  id = "btnSave" >Reditz</button></div>
-
-                  <!-- <button onclick="myscore()" class="button is-success">score changes</button> -->
-                  
-
-                  <p id="demo"></p>
-
-          
-                  <p id="demoName"></p>
-                  <p id="totscore"></p>
+               
           </div>
           <hr />
 
@@ -201,7 +205,7 @@
           </div>
 
       
-          <p id="message001">
+          <p id="message001" style = "font-size: 27px;">
           </p>
           <!-- <p id="message001"></p> -->
           <p id="message002"></p>
@@ -288,6 +292,9 @@
 
 
     function myFunction() {
+
+      $(".show-quiz").show()
+      $("#btnAdd").hide()
   var x = document.getElementById("myText").value;
   document.getElementById("txtName").value = x;
   document.getElementById("demo").innerHTML = x;
@@ -296,7 +303,7 @@
 var username = document.getElementById("myusername").value;
 document.getElementById("txtEmail").value = username;
   document.getElementById("demoName").innerHTML = username;
-
+	$("#btnClose").click();
 }
 
 
@@ -310,13 +317,7 @@ document.getElementById("txtEmail").value = username;
 			$("#txtKey").val("0");
 			$( "#modal" ).addClass( "is-active" );
 
-
-
-
-
-
-
-		});
+	});
 		$("#btnSave" ).click(function() {
             var currentTime = Date.now();
 
@@ -454,6 +455,32 @@ document.getElementById("totscore").innerHTML = scoring;
         message002.innerHTML = "";
         message003.innerHTML = "";
         document.getElementById("question").style.display = 'block';
+
+
+
+        var currentTime = Date.now();
+
+            
+var scoring = document.getElementById("score001").innerHTML;
+document.getElementById("score101").value = scoring;
+document.getElementById("totscore").innerHTML = scoring;
+
+     
+    if($("#txtType").val() == 'N'){
+      database.ref('chums_q/').once("value").then(function(snapshot) {
+        if(snapshot.numChildren()==0){
+          nextkey = 1;
+        }
+        new_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),nextkey);
+
+                  
+      });
+    }
+    else{
+      update_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),$("#txtKey").val());
+    }
+    $("#btnClose").click();
+
       } else {
         message001.innerHTML = b[random002];
         question001.innerHTML = f++;
@@ -483,6 +510,31 @@ document.getElementById("totscore").innerHTML = scoring;
         message002.innerHTML = "";
         message003.innerHTML = "";
         document.getElementById("question").style.display = 'block';
+
+
+        var currentTime = Date.now();
+
+            
+var scoring = document.getElementById("score001").innerHTML;
+document.getElementById("score101").value = scoring;
+document.getElementById("totscore").innerHTML = scoring;
+
+     
+    if($("#txtType").val() == 'N'){
+      database.ref('chums_q/').once("value").then(function(snapshot) {
+        if(snapshot.numChildren()==0){
+          nextkey = 1;
+        }
+        new_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),nextkey);
+
+                  
+      });
+    }
+    else{
+      update_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),$("#txtKey").val());
+    }
+    $("#btnClose").click();
+
       } else {
         message001.innerHTML = c[random003];
         question001.innerHTML = f++;
@@ -558,6 +610,31 @@ document.getElementById("totscore").innerHTML = scoring;
         message002.innerHTML = "";
         message003.innerHTML = "";
         document.getElementById("question").style.display = 'block';
+
+
+        var currentTime = Date.now();
+
+            
+var scoring = document.getElementById("score001").innerHTML;
+document.getElementById("score101").value = scoring;
+document.getElementById("totscore").innerHTML = scoring;
+
+     
+    if($("#txtType").val() == 'N'){
+      database.ref('chums_q/').once("value").then(function(snapshot) {
+        if(snapshot.numChildren()==0){
+          nextkey = 1;
+        }
+        new_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),nextkey);
+
+                  
+      });
+    }
+    else{
+      update_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),$("#txtKey").val());
+    }
+    $("#btnClose").click();
+
    
       } else {
         message001.innerHTML = h[random004];
@@ -589,6 +666,30 @@ document.getElementById("totscore").innerHTML = scoring;
         message002.innerHTML = "";
         message003.innerHTML = "";
         document.getElementById("question").style.display = 'block';
+
+
+        var currentTime = Date.now();
+
+            
+var scoring = document.getElementById("score001").innerHTML;
+document.getElementById("score101").value = scoring;
+document.getElementById("totscore").innerHTML = scoring;
+
+     
+    if($("#txtType").val() == 'N'){
+      database.ref('chums_q/').once("value").then(function(snapshot) {
+        if(snapshot.numChildren()==0){
+          nextkey = 1;
+        }
+        new_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),nextkey);
+
+                  
+      });
+    }
+    else{
+      update_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),$("#txtKey").val());
+    }
+    $("#btnClose").click();
     
 
       } else {
@@ -622,6 +723,30 @@ document.getElementById("totscore").innerHTML = scoring;
         message003.innerHTML = "";
         document.getElementById("question").style.display = 'block';
 
+        var currentTime = Date.now();
+
+            
+var scoring = document.getElementById("score001").innerHTML;
+document.getElementById("score101").value = scoring;
+document.getElementById("totscore").innerHTML = scoring;
+
+     
+    if($("#txtType").val() == 'N'){
+      database.ref('chums_q/').once("value").then(function(snapshot) {
+        if(snapshot.numChildren()==0){
+          nextkey = 1;
+        }
+        new_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),nextkey);
+
+                  
+      });
+    }
+    else{
+      update_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),$("#txtKey").val());
+    }
+    $("#btnClose").click();
+
+
       } else {
         message001.innerHTML = j[random006];
         question001.innerHTML = f++;
@@ -649,7 +774,28 @@ document.getElementById("totscore").innerHTML = scoring;
     function next010() {
       if (f > 6) {
 
-       
+        var currentTime = Date.now();
+
+            
+var scoring = document.getElementById("score001").innerHTML;
+document.getElementById("score101").value = scoring;
+document.getElementById("totscore").innerHTML = scoring;
+
+     
+    if($("#txtType").val() == 'N'){
+      database.ref('chums_q/').once("value").then(function(snapshot) {
+        if(snapshot.numChildren()==0){
+          nextkey = 1;
+        }
+        new_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),nextkey);
+
+                  
+      });
+    }
+    else{
+      update_data($("#txtName").val(),$("#txtEmail").val(),$("#score101").val(),$("#txtKey").val());
+    }
+    $("#btnClose").click();
         message001.innerHTML = "";
         message002.innerHTML = "";
         message003.innerHTML = "";
@@ -666,7 +812,8 @@ document.getElementById("totscore").innerHTML = scoring;
 
     $(".quiz-card").hide();
     $("#question").hide();
-
+    $(".show-quiz").hide();
+    
 $("#card-list").hide()
 
 $(".field").hide()
@@ -678,10 +825,10 @@ $(".field").hide()
         $(".start-quiz").hide();
       });
 
-      $("#btnSave").click(function () {
-        $(".show-quiz").show();
+      // $("#btnSave").click(function () {
+      //   $(".show-quiz").show();
     
-      });
+      // });
 
     });
 
