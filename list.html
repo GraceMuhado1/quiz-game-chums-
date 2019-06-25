@@ -32,7 +32,7 @@
 		<div class="container">
 
 			<div class="content">
-				<button id="btnAdd" class="button"><i class="fa fa-plus"></i> Add Person</button>
+				<button id="btnAdd" class="button"><i class="fa fa-plus"></i> Add List</button>
 			</div>
 			<div id="card-list" class="columns is-mobile">
 
@@ -73,35 +73,35 @@
 				</header>
 				<section class="modal-card-body">
 					<div class="field">
-						<label class="label">Name</label>
+						<label class="label">Chums ID</label>
 						<div class="control">
 							<input type="hidden" id="txtType">
 							<input type="hidden" id="txtKey">
-							<input class="input" id="txtName" type="text" placeholder="Name">
+							<input class="input" id="txtEmail" type="text" placeholder="Chums ID">
 						</div>
 						<p class="help"> </p>
 					</div>
 					<div class="field">
-						<label class="label">Email</label>
+						<label class="label">Username</label>
 						<div class="control">
-							<input class="input" id="txtEmail" type="text" placeholder="Email">
+							<input class="input" id="txtName" type="text" placeholder="username">
 
 						</div>
 						<p class="help"> </p>
 					</div>
 					<div class="field">
-						<label class="label">Profile Picture</label>
+						<label class="label">Score</label>
 						<div class="control">
-							<input class="input" id="score101" type="text" placeholder="Profile picture url">
+							<input class="input" id="score101" type="text" placeholder="score">
 						</div>
 						<p class="help"></p>
 					</div>
 				</section>
-				<footer class="modal-card-foot">
-					<button id="btnSave" class="button is-success">Save changes</button>
-					<button id="btnSavetime" class="button is-success">Save changes</button>
-					<button id="btnClose" class="button">Cancel</button>
-				</footer>
+				<div class="modal-card-foot chums-save">
+					<button id="btnSave" class="btn bg-btn retry_btn btn-block btn-rounded z-depth-1a">Save changes</button>
+					<!-- <button id="btnSavetime" class="button is-success">Save changes</button> -->
+					<button id="btnClose" class="btn bg-btn retry_btn btn-block btn-rounded z-depth-1a">Cancel</button>
+				</div >
 			</div>
 		</div>
 	</section>
@@ -137,14 +137,17 @@
 		});
 
 		function add_data_table(id, name, score, key) {
-			$("#chums-table").append('<tr><th scope="row">' + key + '</th><td>' + id + '</td><td>' + name + '</td><td>' + score + '</td> <td><a href="#" data-key="' + key + '" class=" btnEdit"> <button class="btn bg-btn  btn-rounded z-depth-1a" style = "color:white">Edit</button></a></td><td><a href="#" class="btnRemove"  data-key="' + key + '"><button class="btn bg-btn  btn-rounded z-depth-1a" style = "color:white">Remove</button></a></td></tr>');
+			$("#chums-table").append('<tr  id="'+key+'"><th scope="row"></th><td>' + id + '</td><td>' + name + '</td><td>' + score + '</td> <td><a href="#" data-key="' + key + '" class=" btnEdit"> <button class="btn bg-btn  btn-rounded z-depth-1a" style = "color:white">Edit</button></a></td><td><a href="#" class="btnRemove"  data-key="' + key + '"><button class="btn bg-btn  btn-rounded z-depth-1a" style = "color:white">Remove</button></a></td> </tr>');
 		}
 
 		function update_data_table(id, name, score, key) {
-			$("#chums-table #" + key).html('<tr><th scope="row">' + key + '</th><td>' + id + '</td><td>' + name + '</td><td>' + score + '</td> <td><a href="#" data-key="' + key + '" class=" btnEdit">Edit</a></td><td><a href="#" class="btnRemove"  data-key="' + key + '">Remove</a></td></tr>');
+			$("#chums-table #"+ key).html('  <th scope="row"></th><td>' + id + '</td><td>' + name + '</td><td>' + score + '</td> <td><a href="#" data-key="' + key + '" class=" btnEdit"> <button class="btn bg-btn  btn-rounded z-depth-1a" style = "color:white">Edit</button></a></td><td><a href="#" class="btnRemove"  data-key="' + key + '"><button class="btn bg-btn  btn-rounded z-depth-1a" style = "color:white">Remove</button></a></td>');
 		}
+
+
+
 		function remove_data_table(key) {
-			$("#chums-table #" + key).remove();
+			$("#chums-table #"+ key).remove();
 		}
 
 		function new_data(id, name, score, key) {
