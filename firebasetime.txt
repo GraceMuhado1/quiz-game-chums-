@@ -1,0 +1,6 @@
+	var timestamp = Date.now()
+		var res = moment(timestamp).format('YYYYMMDD, h:mm:ss');
+
+		console.log(res);
+
+		console.log(timestamp);
